@@ -343,7 +343,7 @@ class Runner:
     def save_model_checkpoint(self, model, step):
         if step < 30000:
             return  # Debug
-        path_ckpt = join(self.config['log_dir'], f'model_{self.name_suffix}_{step}.bin')
+        path_ckpt = join(self.config['log_dir'], f'model_{self.name_suffix}.bin')
         torch.save(model.state_dict(), path_ckpt)
         logger.info('Saved model to %s' % path_ckpt)
         return path_ckpt
